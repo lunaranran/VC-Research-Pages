@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华祥医药 VC 深度研究 · RoboticPlus 生成</title>
+<style>
+:root{
+  --red:#E10000; --dark:#b00000; --ink:#1f1f1f; --line:#e3e3e3; --soft:#f7f7f9; --muted:#8a9199; --teal:#0e7490;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:#f4f4f6}
+header{background:linear-gradient(135deg,#a60400,#E10000 55%,#f0b40098);color:#fff;padding:26px 40px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px}
+header h1{font-size:26px;letter-spacing:1px}
+header .sub{font-size:15px;opacity:.95;margin-top:6px;max-width:640px}
+header .score{text-align:right}
+header .score b{font-size:34px;display:block}
+header .score span{font-size:13px;opacity:.9}
+.wrap{display:flex;min-height:calc(100vh - 96px)}
+aside{width:252px;background:#fff;border-right:1px solid var(--line);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;flex:none}
+aside .ver{font-size:11px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px}
+aside .sec{font-size:12px;font-weight:bold;color:var(--red);margin:14px 0 6px}
+aside .item{border:1px solid var(--line);border-radius:8px;padding:9px 11px;margin-bottom:6px;cursor:pointer;font-size:13px;transition:.15s;color:#333}
+aside .item:hover{border-color:var(--red)}
+aside .item.on{border-color:var(--red);background:#fff4f4;color:var(--dark);font-weight:bold}
+main{flex:1;padding:30px 40px;max-width:1280px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 30px;box-shadow:0 2px 10px rgba(0,0,0,.04);display:none}
+.card.on{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.card h2{color:var(--dark);font-size:20px;border-left:5px solid var(--red);padding-left:12px;margin-bottom:20px}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th{background:var(--red);color:#fff;padding:9px 10px;text-align:left;font-weight:600}
+td{border:1px solid var(--line);padding:8px 10px}
+tr:nth-child(even) td{background:var(--soft)}
+.tip{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.7}
+p.body{font-size:14px;line-height:1.85;margin:8px 0}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:4px;margin-left:6px}
+.tj{background:#fef3e2;color:#b76e00}.ss{background:#e7f1fb;color:var(--teal)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat .v{font-size:22px;font-weight:bold;color:var(--red);margin-top:4px}
+svg{width:100%;height:auto;border:1px solid var(--line);border-radius:8px}
+footer{border-top:4px solid var(--red);color:#fff;background:var(--ink);padding:16px 40px;font-size:12px}
+@media(max-width:900px){.wrap{flex-direction:column}aside{width:100%;height:auto;position:static}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>华祥医药 · VC 深度研究</h1>
+    <div class="sub">氟化试剂与分子砌块细分隐形冠军 — 2026-08-27｜AI 行研团队｜PE/VC 尽调视角</div>
+  </div>
+  <div class="score"><b>69</b><span>投资机会分</span></div>
+</header>
+
+<div class="wrap">
+  <aside>
+    <div class="ver">引擎 v1 · vc-deep-research skill / 固定研报框架</div>
+    <div class="sec">研究设置</div>
+    <div class="item" data-t="s1">研究方法与口径</div>
+    <div class="sec">公司层</div>
+    <div class="item" data-t="s2">公司概况 / 主体结构</div>
+    <div class="sec">行业层</div>
+    <div class="item" data-t="s3">行业阶段与 PEST</div>
+    <div class="item" data-t="s4">市场规模与增长</div>
+    <div class="item" data-t="s5">产业链与价值</div>
+    <div class="item" data-t="s6">竞争格局与五力</div>
+    <div class="item" data-t="s7">核心壁垒</div>
+    <div class="item" data-t="s8">商业模式 / 趋势</div>
+    <div class="sec">投资层</div>
+    <div class="item" data-t="s9">投资机会评分</div>
+    <div class="item" data-t="s10">风险分析</div>
+    <div class="item" data-t="s11">未解问题 / 附录</div>
+    <div class="item" data-t="s12">资料来源</div>
+  </aside>
+
+  <main>
+    <!-- 1 研究设置 -->
+    <section class="card" id="s1">
+      <h2>1、研究说明与口径</h2>
+      <p class="body"><b>研究目的</b>：投资决策（PE/VC 尽调视角）。</p>
+      <p class="body"><b>方法论</b>：文件夹行研框架，多级拆解、多源交叉验证（≥3 主分支、2–4 层、叶子≤50）。</p>
+      <p class="body"><b>信息局限</b>：华祥未上市、未融资，公开财务缺失；私有数据标 <span class="tag tj">【判断】</span>，与 <span class="tag ss">【事实】</span> 区分。</p>
+      <div class="grid2">
+        <div class="stat"><div class="k">标的</div><div class="v">南通华祥医药</div></div>
+        <div class="stat"><div class="k">集中度（中国氟化试剂 CR5）</div><div class="v">≈57%</div></div>
+        <div class="stat"><div class="k">出口占比</div><div class="v">≈80%</div></div>
+        <div class="stat"><div class="k">所处阶段</div><div class="v">成长期 · 尽调期</div></div>
+      </div>
+      <div class="tip">证据标注：【事实】公开可查；【判断】由数据推断或用词为自述/待验。私有公司财务一律标【判断】。</div>
+    </section>
+
+    <!-- 2 公司概况 -->
+    <section class="card" id="s2">
+      <h2>2、公司概况 / 主体结构</h2>
+      <table>
+        <tr><th>项</th><th>内容</th><th>证据</th></tr>
+        <tr><td>成立</td><td>2015-05-27（曾用名海门华祥）</td><td>【事实】S2/S4</td></tr>
+        <tr><td>注册资本</td><td>625 万元（实缴 625 万）</td><td>【事实】S2</td></tr>
+        <tr><td>法定代表人/股东</td><td>徐本全 80%（实控）/余海丰 19%/陈增博 1%</td><td>【事实】S2</td></tr>
+        <tr><td>人员规模</td><td>母公司参保约 95 人；集团 300+</td><td>【事实】S2/S3</td></tr>
+        <tr><td>资质</td><td>国家高新技术企业/科技型/瞪羚/专精特新/ISO9001</td><td>【事实】S2/S4</td></tr>
+        <tr><td>融资</td><td>未融资</td><td>【事实】S3</td></tr>
+        <tr><td>业务</td><td>氟化试剂、含氟产品、小分子液体砌块 + 工艺/定制</td><td>【事实】S1</td></tr>
+        <tr><td>布局</td><td>南通研发、宿迁生产、印度研发实验室（2023）；子公司沪/通/济宁/淮南</td><td>【事实】S5</td></tr>
+      </table>
+      <p class="tip">「DAST 全球领先」为官网自述，需独立尽调验证 → 标【判断】，不作事实认定。</p>
+    </section>
+
+    <!-- 3 行业阶段 PEST -->
+    <section class="card" id="s3">
+      <h2>3、行业阶段与结构（含 PEST）</h2>
+      <p class="body">所处阶段：<b>成长期</b>。渗透率：DAST/NFSI 高端氟化约 32%。集中度：中国氟化试剂 CR5≈57%。</p>
+      <p class="body" style="font-size:13px;color:#444">景气：2026 年 CXO 景气回暖、出海需求活跃；含氟砌块出口导向明确【事实/S16】。</p>
+      <div id="pestSvg"></div>
+    </section>
+
+    <!-- 4 市场规模 -->
+    <section class="card" id="s4">
+      <h2>4、市场规模与增长（多口径）</h2>
+      <table>
+        <tr><th>口径</th><th>2025</th><th>预测</th><th>增速</th><th>来源</th></tr>
+        <tr><td>全球氟化试剂</td><td>7.86 亿美元</td><td>2032≈11.9 亿</td><td>CAGR6.1%</td><td>S10</td></tr>
+        <tr><td>全球 DAST</td><td>2.85 亿美元</td><td>2034≈5.21 亿</td><td>CAGR6.9%</td><td>S9</td></tr>
+        <tr><td>中国氟化试剂</td><td>47.8 亿元</td><td>2026≈53.7 亿</td><td>+12.4%</td><td>S6</td></tr>
+        <tr><td>中国含氟砌块</td><td>36.8 亿元</td><td>—</td><td>+14.2%</td><td>S11</td></tr>
+        <tr><td>中国分子砌块(参照)</td><td>80 亿元</td><td>2026≈90-95 亿</td><td>+15%-20%</td><td>S12</td></tr>
+      </table>
+      <p class="body"><b>口径差异</b>：本报告以氟化试剂/含氟砌块为主口径；分子砌块大盘子远大于氟化细分，量级差异大，须锁口径。</p>
+      <div id="marketSvg"></div>
+    </section>
+
+    <!-- 5 产业链 -->
+    <section class="card" id="s5">
+      <h2>5、产业链与价值分布</h2>
+      <div class="grid2">
+        <div class="stat"><div class="k">上游</div><div class="v" style="font-size:15px">氟源（硫酰氟/四氟化硫），资质高、寡头</div></div>
+        <div class="stat"><div class="k">中游（华祥所在）</div><div class="v" style="font-size:15px">氟化方法学+危化资质+跨国认证 = 高价值</div></div>
+        <div class="stat"><div class="k">下游</div><div class="v" style="font-size:15px">全球头部 CRO/CDMO/药企，议价强但粘性强</div></div>
+        <div class="stat"><div class="k">高价值结论</div><div class="v" style="font-size:15px">中游「技术+资质+认证绑定」</div></div>
+      </div>
+    </section>
+
+    <!-- 6 竞争格局 五力 -->
+    <section class="card" id="s6">
+      <h2>6、竞争格局与五力</h2>
+      <table>
+        <tr><th>企业</th><th>成立</th><th>聚焦</th><th>模式</th><th>核心优势</th><th>梯队</th></tr>
+        <tr><td><b>华祥医药</b></td><td>2015</td><td>氟化/含氟砌块/DAST</td><td>研发+定制</td><td>DAST 全球领先(自述)</td><td>细分龙头</td></tr>
+        <tr><td>药石科技</td><td>2008</td><td>分子砌块全品类</td><td>一体化 CRDMO</td><td>砌块库大、前端引流</td><td>一线</td></tr>
+        <tr><td>皓元医药</td><td>2006</td><td>砌块+工具+CDMO</td><td>一体化</td><td>含氟手性砌块</td><td>一线</td></tr>
+        <tr><td>毕得医药</td><td>2007</td><td>分子砌块/试剂</td><td>横向扩张</td><td>海量现货、海外毛利高</td><td>一线</td></tr>
+        <tr><td>联化科技</td><td>2001</td><td>杂环/含氟中间体</td><td>连续流</td><td>千吨级连续氟化</td><td>第一梯队(氟化)</td></tr>
+        <tr><td>永太科技</td><td>1999</td><td>含氟精细化学品</td><td>一体化</td><td>氟烷基化试剂进跨国供应链</td><td>第一梯队(氟化)</td></tr>
+        <tr><td>华鲁恒升</td><td>2002</td><td>氟化中间体一体化</td><td>一体化</td><td>氟化氢-氟苯一体化</td><td>第一梯队(氟化)</td></tr>
+        <tr><td colspan="6" style="background:#fff4f4;color:#b00000;font-weight:bold">未上市同类型企业（补充）</td></tr>
+        <tr><td>湖北固润科技</td><td>未上市核准</td><td>三氟甲基化试剂</td><td>Umemoto/Togni 特色</td><td>出口导向、细分占比高</td><td>第二梯队</td></tr>
+        <tr><td>浙江巍华新材料</td><td>未上市</td><td>DAST 类脱氧氟化</td><td>聚焦含氟细分</td><td>区域龙头（浙江）</td><td>第二梯队</td></tr>
+        <tr><td>常州阳光药业</td><td>未上市</td><td>医药中间体/含氟</td><td>差异化细分</td><td>区域配套</td><td>第二梯队</td></tr>
+        <tr><td>纳孚生物</td><td>未上市</td><td>生物素标记/高价值砌块</td><td>特色定制</td><td>蛋白质组学等细分</td><td>特色型</td></tr>
+      </table>
+      <p class="tip">未上市企业（固润/巍华/阳光/纳孚）财务与市占多不可得，仅定性卡位，标【判断】；上市可比财务以 akshare·东财口径为基准【事实/S13-S15】。</p>
+      <p class="body">可比上市基准（akshare·东财）：药石营收约 14 亿/净利约 0.9 亿；毕得营收约 13-16 亿/净利约 1.5-1.9 亿/海外毛利约 50%；皓元约 20 亿+/毛利约 40%；永太约 40 亿/毛利约 30%；联化约 40 亿+。</p>
+      <div id="compSvg"></div>
+    </section>
+
+    <!-- 7 壁垒 -->
+    <section class="card" id="s7">
+      <h2>7、核心壁垒</h2>
+      <table>
+        <tr><th>维度</th><th>强度</th><th>说明</th></tr>
+        <tr><td>技术研发（氟化方法学）</td><td>高</td><td>DAST 等高选择性氟化，国产替代+连续流</td></tr>
+        <tr><td>危化资质合规</td><td>高</td><td>生产/贮存资质高，环保趋严利好合规龙头</td></tr>
+        <tr><td>客户认证绑定</td><td>高</td><td>跨国 CRO/CDMO 认证周期长、粘性强</td></tr>
+        <tr><td>供应链（上游氟源）</td><td>中</td><td>供应商有限、资质要求高</td></tr>
+        <tr><td>规模与产能</td><td>中</td><td>全球 DAST&lt;500 吨/年，交付是看点</td></tr>
+        <tr><td>品牌/渠道（海外）</td><td>中</td><td>80% 出口，印/韩/美布局</td></tr>
+      </table>
+    </section>
+
+    <!-- 8 商业模式 趋势 -->
+    <section class="card" id="s8">
+      <h2>8、商业模式 / 趋势</h2>
+      <p class="body"><b>收入来源</b>：①标准氟化试剂/砌块销售（可复用）②定制合成/CMO 外包（项目制）。</p>
+      <p class="body"><b>毛利</b>：行业分子砌块毛利 40–58%（高于中间体 32%）；华祥未披露【判断】。</p>
+      <p class="body"><b>趋势</b>：1 国产替代 2 高选择性/连续流 3 下游多肽/ADC/PROTAC 4 海外出口 5 合规趋严集中。</p>
+    </section>
+
+    <!-- 9 评分 -->
+    <section class="card" id="s9">
+      <h2>9、投资机会评分</h2>
+      <table>
+        <tr><th>公司</th><th>成长</th><th>市场</th><th>技术</th><th>客户</th><th>盈利</th><th>速度</th><th>模式</th><th>竞争</th><th>加权</th></tr>
+        <tr><td><b>华祥医药</b></td><td>75</td><td>62</td><td>84</td><td>78</td><td>50</td><td>68</td><td>70</td><td>60</td><td><b>69</b></td></tr>
+      </table>
+      <p class="body">权重：成长 20/市场 15/技术 15/客户 15/盈利 10/速度 10/模式 10/竞争 5。华祥细分龙头稀缺+技术壁垒，但财务不透明+规模小折价。窗口【中-可等回调】。</p>
+    </section>
+
+    <!-- 10 风险 -->
+    <section class="card" id="s10">
+      <h2>10、风险分析</h2>
+      <table>
+        <tr><th>级别</th><th>风险</th></tr>
+        <tr><td>高</td><td>财务不透明；市场竞争（联化/永太跨界）；安全环保监管</td></tr>
+        <tr><td>中</td><td>下游需求波动与大客户议价；替代品(Deoxo-Fluor)；上游氟源集中；产能交付瓶颈；规模天花板；出口/地缘</td></tr>
+        <tr><td>低</td><td>技术路线迭代；人才流失；'DAST 全球领先'口径争议</td></tr>
+      </table>
+    </section>
+
+    <!-- 11 未解 附录 -->
+    <section class="card" id="s11">
+      <h2>11、未解决问题 / 附录</h2>
+      <p class="body"><b>未解</b>：营收/毛利/估值缺失、'DAST 全球领先'口径、产能与份额、分子砌块多口径差异、自营 API 与否、集团关联交易、专利自主性、未融资资金来源、客户集中度、海外子公司实质。</p>
+      <p class="body"><b>附录一（10 问）</b>：审计营收/EBITDA → 'DAST 领先'口径 → 客户集中度/复购 → 产能资金 → 危化资质/处罚 → 专利/研发人效 → 关联交易 → 海外子公司收入 → 上游氟源 → 股权治理。</p>
+      <p class="body"><b>附录二（A/B/C）</b>：A 档=行业复苏+壁垒较硬（公开可确认）；B 档=龙头/海外布局+模式可复制（方向可推断）；C 档=财务真实/全球领先口径/客户产能/集团治理（需一手尽调）；2 周内并联推进，优先 C。</p>
+    </section>
+
+    <!-- 12 来源 -->
+    <section class="card" id="s12">
+      <h2>12、资料来源</h2>
+      <table>
+        <tr><th>编号</th><th>来源</th><th>可信度</th></tr>
+        <tr><td>S1</td><td>华祥官网 btcpharm.com</td><td>高</td></tr>
+        <tr><td>S2</td><td>启信宝-南通华祥工商</td><td>高</td></tr>
+        <tr><td>S3</td><td>企查查-南通华祥</td><td>高</td></tr>
+        <tr><td>S4</td><td>水滴信用-南通华祥</td><td>高</td></tr>
+        <tr><td>S5</td><td>南开就业信息-华祥</td><td>中</td></tr>
+        <tr><td>S6-S8</td><td>博研咨询 氟化试剂/竞争/分子砌块报告</td><td>中</td></tr>
+        <tr><td>S9-S10</td><td>24Chemical DAST / PW 全球氟化试剂</td><td>中</td></tr>
+        <tr><td>S11</td><td>有机定制合成网《2026 CDMO 与分子砌块》</td><td>中</td></tr>
+        <tr><td>S12</td><td>国投证券 CXO 行业报告(2026.03)</td><td>中</td></tr>
+        <tr><td>S13-S15</td><td>毕得/皓元/药石 研报及年报</td><td>高</td></tr>
+        <tr><td>S16</td><td>《CRO/CDMO 复苏周期》(2026.08)</td><td>中</td></tr>
+        <tr><td>S17-S18</td><td>中国/上海证券报行业动态</td><td>中</td></tr>
+        <tr><td>S19</td><td>ChemicalBook DAST</td><td>高</td></tr>
+        <tr><td>S20</td><td>药明康德 2026 半年报</td><td>高</td></tr>
+      </table>
+    </section>
+  </main>
+</div>
+
+<footer>华祥医药 VC 深度研究报告 · vc-deep-research skill 生成 · 仅供研究参考，不构成投资建议 · 私有财务标【判断】</footer>
+
+<script>
+const pestSvg=`
+  <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="410" viewBox="0 0 1040 410">
+    <defs><style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;}</style></defs>
+    <rect x="0" y="0" width="1040" height="46" fill="#E10000"/>
+    <text x="28" y="30" font-size="16" font-weight="bold" fill="#ffffff">行业宏观环境 · PEST 分析（华祥医药 · 氟化试剂/分子砌块）</text>
+    <text x="28" y="74" font-size="14" font-weight="bold" fill="#E10000">1、PEST 分析</text>
+    <line x1="28" y1="80" x2="1012" y2="80" stroke="#c9ccd1" stroke-width="1"/>
+    <g><rect x="28" y="92" width="480" height="128" rx="6" fill="#fdf1f1" stroke="#E10000"/><text x="44" y="120" font-size="15" font-weight="bold" fill="#E10000">P · 政策 / 政治</text><line x1="44" y1="132" x2="432" y2="132" stroke="#E10000"/><text x="44" y="162" font-size="13" fill="#333">国家提速创新药审评，含氟API原料药</text><text x="44" y="190" font-size="13" fill="#333">安全环保趋严，<tspan font-weight="bold" fill="#b00000">高门槛利好合规龙头</tspan>。</text></g>
+    <g><rect x="532" y="92" width="480" height="128" rx="6" fill="#fdf1f1" stroke="#E10000"/><text x="548" y="120" font-size="15" font-weight="bold" fill="#E10000">E · 经济</text><line x1="548" y1="132" x2="936" y2="132" stroke="#E10000"/><text x="548" y="162" font-size="13" fill="#333">全球CXO景气回暖、融资改善；含氟渗透提升，</text><text x="548" y="190" font-size="13" fill="#333">但<tspan font-weight="bold" fill="#b00000">需求波动与大客户议价</tspan>影响盈利。</text></g>
+    <g><rect x="28" y="232" width="480" height="128" rx="6" fill="#fdf1f1" stroke="#E10000"/><text x="44" y="260" font-size="15" font-weight="bold" fill="#E10000">S · 社会</text><line x1="44" y1="272" x2="432" y2="272" stroke="#E10000"/><text x="44" y="302" font-size="13" fill="#333">氟在医药中价值认知提升，<tspan font-weight="bold" fill="#b00000">约2成上市药含氟</tspan>，</text><text x="44" y="330" font-size="13" fill="#333">海外对稳定合规供应诉求上升。</text></g>
+    <g><rect x="532" y="232" width="480" height="128" rx="6" fill="#fdf1f1" stroke="#E10000"/><text x="548" y="260" font-size="15" font-weight="bold" fill="#E10000">T · 技术</text><line x1="548" y1="272" x2="936" y2="272" stroke="#E10000"/><text x="548" y="302" font-size="13" fill="#333">氟化方法学向高选择性/绿色化演进，DAST等</text><text x="548" y="330" font-size="13" fill="#333"><tspan font-weight="bold" fill="#b00000">国产替代与连续流工艺</tspan>成主方向。</text></g>
+    <line x1="28" y1="376" x2="1012" y2="376" stroke="#c9ccd1"/><text x="28" y="394" font-size="11" fill="#8a9199">资料来源：工信部《十四五医药工业发展规划》、国家药监局审评改革、国投证券CXO报告、智研咨询；经整理。</text>
+  </svg>`;
+const marketSvg=`
+  <svg xmlns="http://www.w3.org/2000/svg" width="1040" height="720" viewBox="0 0 1040 720">
+    <defs><style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;}.b{font-size:12px;fill:#333;}.h{font-size:11px;fill:#8a9199;}</style></defs>
+    <rect x="0" y="0" width="1040" height="46" fill="#E10000"/><text x="28" y="30" font-size="16" font-weight="bold" fill="#ffffff">市场规模与口径辨析 · 氟化试剂 / DAST / 分子砌块</text>
+    <text x="28" y="84" class="b">全球氟化试剂 2025≈7.86亿美元 →2032≈11.9亿（CAGR6.1%）</text><rect x="28" y="92" width="900" height="16" fill="#f0f0f0"/><rect x="28" y="92" width="560" height="16" fill="#E10000"/>
+    <text x="28" y="130" class="b">全球 DAST 2025≈2.85亿美元 →2034≈5.21亿（CAGR6.9%）</text><rect x="28" y="138" width="900" height="16" fill="#f0f0f0"/><rect x="28" y="138" width="292" height="16" fill="#C0392B"/>
+    <text x="28" y="176" class="b">中国氟化试剂 2025≈47.8亿元 →2026≈53.7亿（+12.4%）</text><rect x="28" y="184" width="900" height="16" fill="#f0f0f0"/><rect x="28" y="184" width="478" height="16" fill="#D35400"/>
+    <text x="28" y="222" class="b">中国含氟砌块 2025≈36.8亿元（+14.2%）</text><rect x="28" y="230" width="900" height="16" fill="#f0f0f0"/><rect x="28" y="230" width="368" height="16" fill="#E67E22"/>
+    <text x="28" y="268" class="b">中国分子砌块(参照) 2025≈80亿元 →2026≈90-95亿（+15%~20%）</text><rect x="28" y="276" width="900" height="16" fill="#f0f0f0"/><rect x="28" y="276" width="800" height="16" fill="#A60400"/>
+    <line x1="28" y1="320" x2="1012" y2="320" stroke="#c9ccd1"/>
+    <text x="28" y="346" class="h">口径差异：报告以"氟化试剂/含氟砌块"为主口径（对应华祥主营），分子砌块大盘子仅作参照。</text>
+    <text x="28" y="380" font-size="14" font-weight="bold" fill="#E10000">市场规模汇总表</text>
+    <text x="28" y="410" class="b">全球氟化试剂 7.86亿美元 +4.2% | 24Chemical/PW</text>
+    <text x="28" y="436" class="b">全球 DAST 2.85亿美元 ~7% | 24Chemical</text>
+    <text x="28" y="462" class="b">中国氟化试剂 47.8亿元 +12.3% | 博研咨询</text>
+    <text x="28" y="488" class="b">中国含氟砌块 36.8亿元 +14.2% | 有机定制合成网</text>
+    <text x="28" y="514" class="b">中国分子砌块 80亿元 ~+15% | 国投证券</text>
+    <line x1="28" y1="540" x2="1012" y2="540" stroke="#c9ccd1"/>
+    <text x="28" y="566" class="h">资料来源：博研咨询、24Chemical Research、有机定制合成网、国投证券；经统一口径整理。</text>
+  </svg>`;
+const compSvg=`
+  <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="360" viewBox="0 0 1180 360">
+    <defs><style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;}.b{font-size:11.5px;fill:#333;}.w{font-size:11px;font-weight:bold;fill:#fff;}.h{font-size:11px;fill:#8a9199;}</style></defs>
+    <rect x="0" y="0" width="1180" height="46" fill="#E10000"/><text x="30" y="30" font-size="16" font-weight="bold" fill="#ffffff">波特五力 · 快评（华祥医药所处氟化试剂/分子砌块行业）</text>
+    <text x="30" y="84" class="b" font-weight="bold" fill="#b00000">潜在进入者威胁 4/5</text><rect x="300" y="74" width="720" height="16" fill="#f0f0f0"/><rect x="300" y="74" width="576" height="16" fill="#E10000"/>
+    <text x="30" y="118" class="b" font-weight="bold" fill="#b00000">替代品威胁 3/5</text><rect x="300" y="108" width="720" height="16" fill="#f0f0f0"/><rect x="300" y="108" width="432" height="16" fill="#C0392B"/>
+    <text x="30" y="152" class="b" font-weight="bold" fill="#b00000">供应商议价 3/5</text><rect x="300" y="142" width="720" height="16" fill="#f0f0f0"/><rect x="300" y="142" width="432" height="16" fill="#D35400"/>
+    <text x="30" y="186" class="b" font-weight="bold" fill="#b00000">买方议价 3/5</text><rect x="300" y="176" width="720" height="16" fill="#f0f0f0"/><rect x="300" y="176" width="432" height="16" fill="#E67E22"/>
+    <text x="30" y="220" class="b" font-weight="bold" fill="#b00000">现有竞争 3/5</text><rect x="300" y="210" width="720" height="16" fill="#f0f0f0"/><rect x="300" y="210" width="432" height="16" fill="#8E44AD"/>
+    <line x1="30" y1="250" x2="1150" y2="250" stroke="#c9ccd1"/>
+    <text x="30" y="276" class="h">结论：潜在进入者威胁最高(4/5)，其余均中等(3/5)。技术+资质壁垒较硬、竞争相对有序的中等烈度格局。</text>
+    <text x="30" y="298" class="h">资料来源：博研咨询《2026选择性氟试剂竞争格局》、24Chemical DAST报告；经整理。</text>
+  </svg>`;
+document.getElementById('pestSvg').innerHTML=pestSvg;
+document.getElementById('marketSvg').innerHTML=marketSvg;
+document.getElementById('compSvg').innerHTML=compSvg;
+
+document.querySelectorAll('aside .item').forEach(it=>{
+  it.addEventListener('click',()=>{
+    document.querySelectorAll('aside .item').forEach(x=>x.classList.remove('on'));it.classList.add('on');
+    const id=it.dataset.t;document.querySelectorAll('.card').forEach(c=>c.classList.remove('on'));
+    const el=document.getElementById(id);if(el)el.classList.add('on');window.scrollTo({top:0});
+  });
+});
+document.querySelector('aside .item').classList.add('on');
+</script>
+</body>
+</html>
